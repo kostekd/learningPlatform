@@ -7,7 +7,7 @@ const MainPage = () => {
     <div>
       <Header />
       <h1>Welcome to the future learning platform</h1>
-      <Link to='/add'>Things in progress</Link>
+      <Link to='/add'>Things in progress :)</Link>
     </div>
   );
 };
