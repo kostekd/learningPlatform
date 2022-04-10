@@ -1,13 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.css";
-import AddFlashCard from "./components/FlashCard/AddFlashCard";
+import { Route } from "react-router-dom";
+import FlashCardPage from "./pages/FlashCardPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
-
   return (
-    <div>
-      <AddFlashCard/>
-    </div>
+    <Fragment>
+      <Route exact path="/">
+        <MainPage />
+      </Route>
+      <Route exact path="/add">
+        <FlashCardPage />
+      </Route>
+    </Fragment>
   );
 }
 
