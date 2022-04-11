@@ -31,7 +31,8 @@
 }
 
 .input-field input{
-    width: 40rem;
+    width: 30vw;
+    min-width: 7rem;
     height: 3rem;
     border-radius: 10px;
     border: 1px solid #7c7b7b;
@@ -39,7 +40,8 @@
 }
 
 .error input{
-    width: 40rem;
+    width: 30vw;
+    min-width: 7rem;
     height: 3rem;
     border-radius: 10px;
     border: 2px solid #b21818;
