@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import useInput from "../../hooks/useInput";
 import { FlashCardStructure } from "../FlashCard/AddFlashCard";
 import classes from "./FlashCardForm.module.css";
 
@@ -7,35 +8,21 @@ interface FlashCardFormProps {
 }
 
 const FlashCardForm = (props: FlashCardFormProps) => {
-  const [enteredTop, setEnteredTop] = useState("");
-  const [enteredBottom, setEnteredBottom] = useState("");
+  const {
+    value : enteredTop,
+    isValid: isTopValid,
+    onChangeHandler: onChangeTopHandler,
+    onBlurHandler: onBlurTopHandler,
+    reset: resetTop
+  } = useInput();
 
-  const [isTopTouched, setIsTopTouched] = useState(false);
-  const [isBottomTouched, setIsBottomTouched] = useState(false);
-
-  const isEnteredTopValid: Boolean = enteredTop.trim() === "" && isTopTouched;
-  const isEnteredBottomValid: Boolean =
-    enteredBottom.trim() === "" && isBottomTouched;
-
-  const onChangeTopHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const top = event.currentTarget.value;
-    setEnteredTop(top);
-  };
-
-  const onChangeBottomHandler = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const bottom = event.currentTarget.value;
-    setEnteredBottom(bottom);
-  };
-
-  const onBlurTopHandler = () => {
-    setIsTopTouched(true);
-  };
-
-  const onBlurBottomHandler = () => {
-    setIsBottomTouched(true);
-  };
+  const {
+    value : enteredBottom,
+    isValid: isBottomValid,
+    onChangeHandler: onChangeBottomHandler,
+    onBlurHandler: onBlurBottomHandler,
+    reset: resetBottom
+  } = useInput();
 
   const onSubmitFormHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -46,26 +33,24 @@ const FlashCardForm = (props: FlashCardFormProps) => {
     };
 
     props.onSubmitHandler(response);
-    setEnteredTop("");
-    setEnteredBottom("");
-    setIsBottomTouched(false);
-    setIsTopTouched(false);
+    resetTop();
+    resetBottom();
   };
 
   const errorMessage = (
     <p className={classes["error-paragraph"]}>Invalid input</p>
   );
 
-  const topStyle = !isEnteredTopValid
+  const topStyle = !isTopValid
     ? classes["input-field"]
     : classes["error"];
-  const bottomStyle = !isEnteredBottomValid
+  const bottomStyle = !isBottomValid
     ? classes["input-field"]
     : classes["error"];
 
   return (
     <form className={classes["form-control"]} onSubmit={onSubmitFormHandler}>
-      <h2>Create your fiszka :)</h2>
+      <h2>Create your FlashCard :)</h2>
       <div className={topStyle}>
         <label htmlFor="top">Top</label>
         <br />
@@ -76,7 +61,7 @@ const FlashCardForm = (props: FlashCardFormProps) => {
           onChange={onChangeTopHandler}
           onBlur={onBlurTopHandler}
         />
-        {isEnteredTopValid && errorMessage}
+        {isTopValid && errorMessage}
       </div>
       <div className={bottomStyle}>
         <label htmlFor="bottom">Bottom</label>
@@ -88,7 +73,7 @@ const FlashCardForm = (props: FlashCardFormProps) => {
           onChange={onChangeBottomHandler}
           onBlur={onBlurBottomHandler}
         />
-        {isEnteredBottomValid && errorMessage}
+        {isBottomValid && errorMessage}
       </div>
       <div>
         <button>Submit</button>
