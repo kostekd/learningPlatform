@@ -1,0 +1,18 @@
+.burger-icon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.burger-icon button {
+    text-decoration: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.burger-icon img{
+    width: 6rem;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
