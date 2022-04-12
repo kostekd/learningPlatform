@@ -3,7 +3,8 @@ import AddFlashCard from "../components/FlashCard/AddFlashCard";
 
 
 const FlashCardPage = () => {
-    return (<Fragment>
+    return (
+    <Fragment>
         <AddFlashCard/>
     </Fragment>)
 }

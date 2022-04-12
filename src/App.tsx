@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
 import FlashCardPage from "./pages/FlashCardPage";
-import MainPage from "./pages/MainPage";
+import MainPage from "./pages/MainPage/MainPage";
 
 function App() {
   return (
