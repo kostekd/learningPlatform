@@ -8,6 +8,7 @@
     width: 8rem;
     height: 8rem;
     margin: 0.5rem;
+    box-shadow: 10px 5px 5px #8d8a8a;
 }
 
 .description{

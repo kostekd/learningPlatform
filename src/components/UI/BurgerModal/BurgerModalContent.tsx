@@ -10,13 +10,15 @@ const BurgerModalContent = (props: BurgerModalProps) => {
   return (
     <div className={classes["burger-modal"]}>
       <button onClick={() => props.onClickAction()}>
-      <img src={BackArrow} alt="Logo" />
+        <img src={BackArrow} alt="Logo" />
       </button>
       <div className={classes["link-buttons"]}>
         <button>
           <Link to="/add">Add flashcards</Link>
         </button>
-        <button>Log In</button>
+        <button>
+          <Link to="/login">Log In</Link>
+        </button>
         <button>About us</button>
       </div>
     </div>
