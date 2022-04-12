@@ -15,7 +15,7 @@ const Burger = () => {
       <button onClick={onClickAction}>
         <img src={BurgerIcon} alt="Logo" />
       </button>
-      {isBurgerClicked && <BurgerModal/>}
+      {isBurgerClicked && <BurgerModal onClickAction={onClickAction}/>}
     </div>
   );
 };
