@@ -37,7 +37,6 @@ function App() {
         <div className={classes["flashcard-list"]}>
           <FlashCardList flashcards={currentFlashCard} />
         </div>
-        <div>Essa</div>
       </main>
     </div>
   );

@@ -3,6 +3,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    align-items: center;
-    width: 80%;
+    justify-content: center;
+    max-width: 60%;
 }

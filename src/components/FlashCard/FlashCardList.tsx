@@ -9,7 +9,7 @@ interface FlashCardListProps{
 }
 const FlashCardList = (props : FlashCardListProps) =>{
     const flashcardComponents = props.flashcards.map(flashcard =>{
-        return <FlashCard top={flashcard.top} bottom={flashcard.bottom}/>
+        return <FlashCard key={Math.random()} top={flashcard.top} bottom={flashcard.bottom}/>
     })
 
     return (
