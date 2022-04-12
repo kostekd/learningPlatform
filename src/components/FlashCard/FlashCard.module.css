@@ -1,5 +1,7 @@
 .flashcard{
     border-radius: 10px;
     border: 1px solid #7c7b7b;
+    width: 8rem;
+    height: 8rem;
     margin: 0.5rem;
 }

@@ -1,6 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { FlashCardStructure } from "../FlashCard/AddFlashCard";
 import FlashCard from "./FlashCard";
+
+import classes from './FlashCardList.module.css';
 
 interface FlashCardListProps{
     flashcards : FlashCardStructure[]
@@ -11,9 +13,9 @@ const FlashCardList = (props : FlashCardListProps) =>{
     })
 
     return (
-        <Fragment>
+        <div className={classes.content}>
             {flashcardComponents}
-        </Fragment>
+        </div>
     );
 };
 
