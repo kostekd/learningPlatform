@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BurgerModalProps } from "./BurgerModal";
 import classes from "./BurgerModalContent.module.css";
 
@@ -9,7 +10,7 @@ const BurgerModalContent = (props: BurgerModalProps) => {
     <div className={classes["burger-modal"]}>
       <button onClick={() => props.onClickAction()}>Close this</button>
       <div className={classes['link-buttons']}>
-        <button>Add flashcards</button>
+        <button><Link to="/add">Add flashcards</Link></button>
         <button>Log In</button>
         <button>About us</button>
       </div>

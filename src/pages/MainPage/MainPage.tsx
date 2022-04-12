@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import classes from "./MainPage.module.css";
 
@@ -14,7 +13,6 @@ const MainPage = () => {
           people connect and learn foreign languages in the most efficient way
           possible.
         </section>
-        <Link to="/add">Things in progress :)</Link>
       </main>
     </div>
   );
