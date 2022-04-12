@@ -1,11 +1,18 @@
-import React from "react";
-import classes from './BurgerModal.module.css';
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom";
+import Backdrop from "../Backdrop/Backdrop";
+import BurgerModalContent from "./BurgerModalContent";
+
+
 
 const BurgerModal = () => {
-    return (
-        <div className={classes['burger-modal']}>
-            Essa
-        </div>
+    const portalDestination : HTMLElement = document.getElementById('burger-overlay') as HTMLElement;
+
+    return(
+        <Fragment>
+            {ReactDOM.createPortal(<BurgerModalContent/>, portalDestination)}
+            {ReactDOM.createPortal(<Backdrop/>, portalDestination)}
+        </Fragment>
     );
 }
 

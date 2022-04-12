@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "../Modal/Modal";
+import BurgerModal from "../BurgerModal/BurgerModal";
 import BurgerIcon from "./../../../images/burger3.svg";
 import classes from "./Burger.module.css";
 
@@ -15,7 +15,7 @@ const Burger = () => {
       <button onClick={onClickAction}>
         <img src={BurgerIcon} alt="Logo" />
       </button>
-      {isBurgerClicked && <Modal/>}
+      {isBurgerClicked && <BurgerModal/>}
     </div>
   );
 };
