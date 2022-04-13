@@ -9,26 +9,63 @@ export interface FlashCardStructure {
   bottom: String;
 }
 
-const DUMMY_VALUES: FlashCardStructure[] = [
-  { top: "car", bottom: "samochód" },
-  { top: "cat", bottom: "kot" },
-  { top: "dog", bottom: "pies" },
-  { top: "pen", bottom: "długopis" },
-  { top: "value", bottom: "wartość" },
-  { top: "face", bottom: "twarz" },
-  { top: "leg", bottom: "noga" },
-  { top: "keyboard", bottom: "klawiatura" },
-  { top: "screen", bottom: "ekran" },
-  { top: "actor", bottom: "aktor" },
-];
+const url = "https://mywebsite-5ab91-default-rtdb.europe-west1.firebasedatabase.app/flashcards.json";
 
-function App() {
+
+const AddFlashCard = () => {
   const [currentFlashCard, setCurrentFlashCard] =
-    useState<FlashCardStructure[]>(DUMMY_VALUES);
+    useState<FlashCardStructure[]>([]);
 
   const addElementHandler = (flashcard: FlashCardStructure) => {
     setCurrentFlashCard((prevState) => [...prevState, flashcard]);
   };
+
+  const fetchFlashCardHandler = async () => {
+    try{
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      const data = await response.json();
+
+      console.log(data);
+
+      const loadedFlashcards : FlashCardStructure[] = [];
+/*
+      data.forEach((element: FlashCardStructure) => {
+        loadedFlashcards.push({
+          top: element.top,
+          bottom: element.bottom,
+        });
+      }); 
+*/
+      setCurrentFlashCard(loadedFlashcards);
+    }
+    catch(error){
+      alert(error);
+    }
+  }
+
+  const addFlashCardHandler = async (flashcards : FlashCardStructure[]) => {
+
+    try{
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(flashcards),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      console.log(data);
+    }
+
+    catch(error){
+      alert(error);
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -38,8 +75,9 @@ function App() {
           <FlashCardList flashcards={currentFlashCard} />
         </div>
       </main>
+      <button onClick={()=> fetchFlashCardHandler()}>Click me!</button>
     </div>
   );
 }
 
-export default App;
+export default AddFlashCard;
