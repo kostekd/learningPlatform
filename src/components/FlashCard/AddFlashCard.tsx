@@ -32,14 +32,13 @@ const AddFlashCard = () => {
       console.log(data);
 
       const loadedFlashcards : FlashCardStructure[] = [];
-/*
-      data.forEach((element: FlashCardStructure) => {
-        loadedFlashcards.push({
-          top: element.top,
-          bottom: element.bottom,
-        });
-      }); 
-*/
+
+      for(const key in data){
+        for(const index in data[key]){
+          loadedFlashcards.push(data[key][index]);
+        }
+      }
+      
       setCurrentFlashCard(loadedFlashcards);
     }
     catch(error){
