@@ -1,8 +1,12 @@
 .content{
+    width: 100%;
+}
+
+.list-format{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 60%;
+    width: 70vw;
 }

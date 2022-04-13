@@ -38,7 +38,7 @@ const AddFlashCard = () => {
           loadedFlashcards.push(data[key][index]);
         }
       }
-      
+
       setCurrentFlashCard(loadedFlashcards);
     }
     catch(error){
@@ -74,7 +74,8 @@ const AddFlashCard = () => {
           <FlashCardList flashcards={currentFlashCard} />
         </div>
       </main>
-      <button onClick={()=> fetchFlashCardHandler()}>Click me!</button>
+      <button onClick={()=> fetchFlashCardHandler()}>GET existing cards!</button>
+      <button onClick={()=> addFlashCardHandler(currentFlashCard)}>Synchronize</button>
     </div>
   );
 }
