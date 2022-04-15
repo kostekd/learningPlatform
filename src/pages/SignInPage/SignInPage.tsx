@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
+
 import Header from "../../components/Header/Header";
 import useHttpLogin from "../../hooks/useHttpLogin";
 import { RequestConfiguration } from "../../hooks/useHttpLogin";
+import classes from './SignInPage.module.css';
 
 const LogInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -29,13 +31,13 @@ const LogInPage = () => {
     //getting response data
     data.then(result=>{
       console.log(result);
-    })
+    });
   }
 
   return (
     <div>
       <Header />
-      <div>
+      <div className={classes.content}>
         <form onSubmit={onSubmitHandler}>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" ref={emailInputRef}/>
