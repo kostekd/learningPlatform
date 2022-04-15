@@ -12,3 +12,11 @@
 .header-style h1{
     font-weight: lighter;
 }
+.header-style img{
+    width: 3rem;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+}
