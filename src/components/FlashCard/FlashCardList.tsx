@@ -12,10 +12,12 @@ const FlashCardList = (props: FlashCardListProps) => {
         return <FlashCard key={Math.random()} top={flashcard.top} bottom={flashcard.bottom} />
     })
 
+    const renderedList = flashcardComponents.length === 0 ? <p>No flashcards found</p> :flashcardComponents;
+
     return (
         <div className={classes.content}>
             <div className={classes['list-format']}>
-                {flashcardComponents}
+                {renderedList}
             </div>
         </div>
     );

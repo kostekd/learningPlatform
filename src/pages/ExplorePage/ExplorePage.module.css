@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcards{
+    width: 70%;
+}
+
+.content input{
+    margin-top: 2rem;
+    width: 30%;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid #7c7b7b;
+}

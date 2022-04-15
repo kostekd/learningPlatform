@@ -14,6 +14,9 @@ const BurgerModalContent = (props: BurgerModalProps) => {
       </button>
       <div className={classes["link-buttons"]}>
         <button>
+          <Link to="/explore">Explore flashcards</Link>
+        </button>
+        <button>
           <Link to="/add">Add flashcards</Link>
         </button>
         <button>
