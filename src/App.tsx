@@ -3,7 +3,7 @@ import "./App.css";
 import { Route } from "react-router-dom";
 import FlashCardPage from "./pages/FlashCardPage";
 import MainPage from "./pages/MainPage/MainPage";
-import LogInPage from "./pages/LogInPage/LogInPage";
+import SignInPage from "./pages/SignInPage/SignInPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <ExplorePage />
       </Route>
       <Route exact path="/login">
-        <LogInPage />
+        <SignInPage />
       </Route>
     </Fragment>
   );
