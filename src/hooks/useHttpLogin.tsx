@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export interface RequestConfiguration {
     url: RequestInfo,
@@ -9,7 +9,6 @@ export interface RequestConfiguration {
         password: String | undefined
     }
 }
-
 
 const useHttpLogin = () => {
     const [isLoading, setIsLoading] = useState(false);
