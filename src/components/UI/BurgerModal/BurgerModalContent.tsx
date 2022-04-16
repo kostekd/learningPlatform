@@ -17,6 +17,7 @@ const BurgerModalContent = (props: BurgerModalProps) => {
   const onClickLogoutHandler = () => {
     dispatch(authActions.logout());
     props.onClickAction();
+    localStorage.clear();
     history.push('/');
   }
 
