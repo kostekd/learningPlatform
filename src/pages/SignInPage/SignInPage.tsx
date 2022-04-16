@@ -17,7 +17,7 @@ const LogInPage = () => {
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (emailInputRef === null || passwordInputRef === null) return;
+    if (emailInputRef.current === null || passwordInputRef.current === null) return;
 
     const configRequest: RequestConfiguration = {
       url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCVUEgqiIBcdFDIYQRYWtOQOsmTWS98vA8",
@@ -38,7 +38,11 @@ const LogInPage = () => {
         alert(error);
       }
       else {
-        dispatchAction(authActions.login({ email: emailInputRef.current?.value }));
+        if(emailInputRef.current){
+          dispatchAction(authActions.login({ email: emailInputRef.current.value, token : result.idToken }));
+          localStorage.setItem("email", emailInputRef.current.value);
+          localStorage.setItem("token", result.idToken);
+        }
         history.push('/');
       }
     });
