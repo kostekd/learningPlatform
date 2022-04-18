@@ -22,12 +22,8 @@ const Header = (props: HeaderProps) => {
                     <h1>putLearn</h1>
                 </div>
             </Link>
-            <div className={classes["right-side"]}>
-                <div className={classes.logout}>
-                    {isAuth && props.children}
-                </div>
-                <Burger />
-            </div>
+            {isAuth && props.children}
+            <Burger />
         </header>
     );
 }
