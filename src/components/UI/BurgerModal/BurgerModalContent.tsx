@@ -6,6 +6,7 @@ import classes from "./BurgerModalContent.module.css";
 import BackArrow from "./../../../images/FullLeftArrow.svg";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../../store/authentication";
+import { APP_PAGE } from "../../../App";
 
 //props the same as for BurgerModal.tsx (BurgerModalProps)
 
@@ -23,27 +24,41 @@ const BurgerModalContent = (props: BurgerModalProps) => {
 
   return (
     <div className={classes["burger-modal"]}>
+
       <button onClick={() => props.onClickAction()}>
         <img src={BackArrow} alt="Logo" />
       </button>
+
       <div className={classes["link-buttons"]}>
         <button>
-          <Link to="/explore" className={classes.link}>Explore flashcards</Link>
+          <Link to={APP_PAGE.EXPLORE} className={classes.link}>Explore flashcards</Link>
         </button>
+
         <button>
-          <Link to="/add" className={classes.link}>Add flashcards</Link>
+          <Link to={APP_PAGE.ADD} className={classes.link}>Add flashcards</Link>
         </button>
+
+        <button>
+          <Link to='/about_us' className={classes.link}>About us</Link>
+        </button>
+        
         {!isAuth &&
           <button>
-            <Link to="/login" className={classes.link}>Sign Up</Link>
+            <Link to={APP_PAGE.SIGN_IN} className={classes.link}>Sign Up</Link>
           </button>
         }
-        <button>About us</button>
+        {!isAuth &&
+          <button>
+            <Link to={APP_PAGE.LOG_IN} className={classes.link}>Log In</Link>
+          </button>
+        }
+
         {isAuth && <button onClick={onClickLogoutHandler} style={{ color: 'red' }}>
           Log out
         </button>}
+
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -7,6 +7,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import TestPage from "./pages/TestPage/TestPage";
+import LogInPage from "./pages/LogInPage/LogInPage";
 
 export enum APP_PAGE {
   HOME = '/',
@@ -32,6 +33,9 @@ function App() {
       </Route>
       <Route exact path={APP_PAGE.SIGN_IN}>
         <SignInPage />
+      </Route>
+      <Route exact path={APP_PAGE.LOG_IN}>
+        <LogInPage />
       </Route>
       <Route exact path={APP_PAGE.EXAM}>
         <TestPage />

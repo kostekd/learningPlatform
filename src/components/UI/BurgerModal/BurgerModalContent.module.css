@@ -1,6 +1,5 @@
 .burger-modal{
     display:flex;
-    align-content: space-between;
     flex-direction: column;
     position: fixed;
     right: 0;
@@ -41,6 +40,10 @@
   flex-direction: column;
 }
 .link-buttons button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
   font-family: 'Montserrat', sans-serif;
   border: none;
   font-size: medium;

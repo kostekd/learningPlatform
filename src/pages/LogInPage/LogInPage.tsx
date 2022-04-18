@@ -6,7 +6,7 @@ import { authActions } from "../../store/authentication";
 import Header from "../../components/Header/Header";
 import useHttpLogin from "../../hooks/useHttpLogin";
 import { RequestConfiguration } from "../../hooks/useHttpLogin";
-import classes from './SignInPage.module.css';
+import classes from './../SignInPage/SignInPage.module.css';
 
 const LogInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
