@@ -5,7 +5,7 @@ import classes from "./MainPage.module.css";
 const MainPage = () => {
   return (
     <div>
-      <Header />
+      <Header> <button>Take a test</button> </Header>
       <main className={classes.content}>
         <h1>Welcome to the future learning platform</h1>
         <section>

@@ -16,6 +16,11 @@
     width: 3rem;
 }
 
+.right-side{
+    display: flex;
+    flex-direction: row;
+
+}
 .link{
     text-decoration: none;
     color: white;
