@@ -8,7 +8,7 @@ import useHttpLogin from "../../hooks/useHttpLogin";
 import { RequestConfiguration } from "../../hooks/useHttpLogin";
 import classes from './SignInPage.module.css';
 
-const LogInPage = () => {
+const SignInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const { isLoading, error, sendRequest } = useHttpLogin();
@@ -67,4 +67,4 @@ const LogInPage = () => {
   );
 };
 
-export default LogInPage;
+export default SignInPage;
