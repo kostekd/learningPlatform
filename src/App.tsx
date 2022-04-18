@@ -5,6 +5,7 @@ import FlashCardPage from "./pages/FlashCardPage";
 import MainPage from "./pages/MainPage/MainPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
+import TestPage from "./pages/TestPage/TestPage";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route exact path="/login">
         <SignInPage />
+      </Route>
+      <Route exact path="/test">
+        <TestPage />
       </Route>
     </Fragment>
   );
