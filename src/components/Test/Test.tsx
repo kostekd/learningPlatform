@@ -38,7 +38,7 @@ const TestContent = (props: TestProps) => {
             {
                 start
                 &&
-                <Questions/>
+                <Questions flashcards={props.flashcards}/>
             }
         </Fragment>
     )
