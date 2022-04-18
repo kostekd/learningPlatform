@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { APP_PAGE } from "../../App";
 
 import Header from "../../components/Header/Header";
 import classes from "./MainPage.module.css";
@@ -8,7 +9,7 @@ const MainPage = () => {
   const history = useHistory();
 
   const onTestClickHandler = () => {
-    history.push('/test');
+    history.push(APP_PAGE.EXAM);
   }
 
   return (
