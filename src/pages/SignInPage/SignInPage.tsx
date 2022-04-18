@@ -41,8 +41,6 @@ const SignInPage = () => {
       else {
         if(emailInputRef.current){
           dispatchAction(authActions.login({ email: emailInputRef.current.value, token : result.idToken }));
-          localStorage.setItem("email", emailInputRef.current.value);
-          localStorage.setItem("token", result.idToken);
         }
         history.push('/');
       }

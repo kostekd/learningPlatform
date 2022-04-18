@@ -33,7 +33,7 @@ const LogInPage = () => {
     }
 
     const data = sendRequest(configRequest);
-    
+
     //getting response data
     data.then(result => {
       if (result === undefined) {
@@ -42,8 +42,6 @@ const LogInPage = () => {
       else {
         if(emailInputRef.current){
           dispatchAction(authActions.login({ email: emailInputRef.current.value, token : result.idToken }));
-          localStorage.setItem("email", emailInputRef.current.value);
-          localStorage.setItem("token", result.idToken);
         }
         history.push('/');
       }
