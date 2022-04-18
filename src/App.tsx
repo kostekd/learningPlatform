@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
-import "./App.css";
 import { Route } from "react-router-dom";
+
+import "./App.css";
 import FlashCardPage from "./pages/FlashCardPage";
 import MainPage from "./pages/MainPage/MainPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
