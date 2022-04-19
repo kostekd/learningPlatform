@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface QuestionProps {
     onApproveClick: Function,
@@ -8,6 +8,7 @@ interface QuestionProps {
         correct: String,
         alternative1: String,
         alternative2: String,
+        shuffled: String[]
     }
 }
 
@@ -22,7 +23,7 @@ const Question = (props: QuestionProps) => {
     const onSubmitFormHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if(checked ===props.question.correct){
+        if(props.question.shuffled[parseInt(checked) - 1] === props.question.correct){
             props.onCorrectAnswer();
         }
         props.onApproveClick();
@@ -37,33 +38,33 @@ const Question = (props: QuestionProps) => {
                     <label>
                         <input
                             type="radio"
-                            value="Answer1"
-                            checked = {checked === 'Answer1'}
-                            onChange={(e) => onChangeHandler('Answer1')}
+                            value="1"
+                            checked = {checked === '1'}
+                            onChange={(e) => onChangeHandler('1')}
                         />
-                        {props.question.correct}
+                        {props.question.shuffled[0]}
                     </label>
                 </div>
                 <div className="radio">
                     <label>
                         <input
                             type="radio"
-                            value="Answer2"
-                            onChange={(e) => onChangeHandler('Answer2')}
-                            checked = {checked === 'Answer2'}
+                            value="2"
+                            onChange={(e) => onChangeHandler('2')}
+                            checked = {checked === '2'}
                         />
-                        {props.question.alternative1}
+                        {props.question.shuffled[1]}
                     </label>
                 </div>
                 <div className="radio">
                     <label>
                         <input
                             type="radio"
-                            value="Other"
-                            onChange={(e) => onChangeHandler('Answer3')}
-                            checked = {checked === 'Answer3'}
+                            value="3"
+                            onChange={(e) => onChangeHandler('3')}
+                            checked = {checked === '3'}
                         />
-                        {props.question.alternative2}
+                        {props.question.shuffled[2]}
                     </label>
                 </div>
 

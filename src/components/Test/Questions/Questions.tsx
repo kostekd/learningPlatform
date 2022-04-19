@@ -18,6 +18,21 @@ const Questions = (props: QuestionProps) => {
         setPoints(points + 1);
     }
 
+    function shuffle(array : String[]) {
+        let currentIndex = array.length,  randomIndex;
+      
+        while (currentIndex !== 0) {
+      
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+
     const questionIndexes = Array.from({ length: 10 }, () => Math.floor(Math.random() * props.flashcards.length));
     const questions = questionIndexes.map(element => {
         const alternativeIndex1 = Math.floor(Math.random() * props.flashcards.length);
@@ -27,6 +42,7 @@ const Questions = (props: QuestionProps) => {
             correct: props.flashcards[element].top,
             alternative1: props.flashcards[alternativeIndex1].top,
             alternative2: props.flashcards[alternativeIndex2].top,
+            shuffled: shuffle([props.flashcards[element].top,props.flashcards[alternativeIndex1].top,props.flashcards[alternativeIndex2].top])
         }
     });
 
