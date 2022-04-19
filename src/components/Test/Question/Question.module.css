@@ -1,6 +1,5 @@
 .content{
     display: flex;
-    align-items: center;
     background-color: #6fa499;
     padding: 0.5rem;
     border-radius: 10px;
@@ -26,6 +25,7 @@
 }
 
 .submit-answer{
+    font-size: 1rem;
     border: none;
     width: 40%;
     font-weight: bold;
@@ -37,5 +37,10 @@
 
 .submit-answer:hover{
     background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.submit-answer:disabled{
+    cursor: not-allowed;
 }
 

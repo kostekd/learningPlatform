@@ -36,7 +36,6 @@ const TestPage = () => {
     }
 
     useEffect(() => {
-        // Update the document title using the browser API
         setLoading(true);
         addFlashCardHandler();
         setLoading(false);

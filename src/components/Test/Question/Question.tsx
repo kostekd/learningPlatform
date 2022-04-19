@@ -71,8 +71,8 @@ const Question = (props: QuestionProps) => {
                         {props.question.shuffled[2]}
                     </label>
                 </div>
-                <div className={classes.footer}>
-                    <button className={classes['submit-answer']} type="submit">
+                <div>
+                    <button disabled={checked === ''} className={classes['submit-answer']} type="submit">
                         Submit
                     </button>
                 </div>

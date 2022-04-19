@@ -17,7 +17,7 @@ const TestIntroduction = (props : TestIntroductionProps) => {
         <p>
             Are you ready to take on a challenge?
         </p>
-        <button onClick={() => props.onStart()}>Start the quiz</button>
+        <button className={classes['start-button']} onClick={() => props.onStart()}>Start the quiz</button>
     </main>
     );
 }

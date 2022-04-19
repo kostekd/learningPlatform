@@ -1,4 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
+
+import classes from './Question.module.css';
 import { FlashCardStructure } from "../../FlashCard/AddFlashCard";
 import Question from "../Question/Question";
 
@@ -46,9 +48,13 @@ const Questions = (props: QuestionProps) => {
         }
     });
 
+    const messageIfDidPoorly = "Not the best but there is still room to improve";
+    const messageIfDidModerately = "You are not a beginner but there is still more room to improve";
+    const messageIfDidGood = "Thats a way to go. I can see you are an expert!";
+
     const finished = index < 10 ? false : true;
     return (
-        <Fragment>
+        <div className={classes.content}>
             {!finished
                 &&
                 <div>
@@ -60,10 +66,15 @@ const Questions = (props: QuestionProps) => {
                 finished
                 &&
                 <div>
-                    <p>{points} / 10</p>
+                    <h2>Congratulations!</h2>
+                    You scored {points} out of 10 possible!
+                    <br/>
+                    {points < 4 && messageIfDidPoorly}
+                    {points >= 4 && points < 8 && messageIfDidModerately}
+                    {points >= 8 && messageIfDidGood}
                 </div>
             }
-        </Fragment>
+        </div>
     );
 }
 

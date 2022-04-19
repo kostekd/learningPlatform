@@ -33,9 +33,7 @@ const TestContent = (props: TestProps) => {
                 {
                     !start
                     &&
-
                     <><h1>Prepare for your test</h1><h3>{timer}</h3></>
-
                 }
                 {
                     start
