@@ -6,9 +6,9 @@ import { authActions } from "../../store/authentication";
 import Header from "../../components/Header/Header";
 import useHttpLogin from "../../hooks/useHttpLogin";
 import { RequestConfiguration } from "../../hooks/useHttpLogin";
-import classes from './SignInPage.module.css';
+import classes from './../SignInPage/SignInPage.module.css';
 
-const SignInPage = () => {
+const LogInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
   const { isLoading, error, sendRequest } = useHttpLogin();
@@ -20,7 +20,7 @@ const SignInPage = () => {
     if (emailInputRef.current === null || passwordInputRef.current === null) return;
 
     const configRequest: RequestConfiguration = {
-      url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCVUEgqiIBcdFDIYQRYWtOQOsmTWS98vA8",
+      url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCVUEgqiIBcdFDIYQRYWtOQOsmTWS98vA8",
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -33,6 +33,7 @@ const SignInPage = () => {
     }
 
     const data = sendRequest(configRequest);
+
     //getting response data
     data.then(result => {
       if (result === undefined) {
@@ -54,7 +55,7 @@ const SignInPage = () => {
       <Header />
       <div className={classes.content}>
         <form onSubmit={onSubmitHandler}>
-          <h2>Join our community</h2>
+          <h2>Log in to your account</h2>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" ref={emailInputRef} />
           <label htmlFor="password">Password</label>
@@ -66,4 +67,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default LogInPage;

@@ -1,0 +1,24 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.start-button{
+    border: none;
+    width: fit-content;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color:#38eec9;
+}
+
+.start-button:hover{
+    cursor: pointer;
+    background-color: #015746;
+}
+p{
+    width: 60%;
+}

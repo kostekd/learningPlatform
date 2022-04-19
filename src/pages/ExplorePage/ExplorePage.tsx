@@ -38,7 +38,7 @@ const ExplorePage = () => {
     }
 
     const filteredFlashCards = flashcards.filter(element => {
-        return element.top.startsWith(searchTerm);
+        return element.top.toLowerCase().startsWith(searchTerm.toLowerCase());
     });
 
     const renderedElement = isLoading ?

@@ -1,4 +1,4 @@
-.content{
+.content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,6 +6,31 @@
     align-items: center;
 }
 
-.content section{
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button>button {
+    font-family: inherit;
+    color: #1abc9c;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    transition: ease-out 0.4s;
+    padding: 0.7rem;
+}
+
+.button>button:hover {
+    background-color: #1abc9c;
+    color: white;
+    cursor: pointer;
+}
+
+.content section {
     max-width: 60%;
 }

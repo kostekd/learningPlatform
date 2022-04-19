@@ -3,8 +3,17 @@ import Burger from "../UI/Burger/Burger";
 import classes from './Header.module.css';
 import BookLogo from './../../images/bookLogo.svg';
 import { Link } from "react-router-dom";
+import { RootStateOrAny, useSelector } from "react-redux";
 
-const Header = () => {
+interface HeaderProps {
+    children?:
+    | React.ReactChild
+    | React.ReactChild[];
+}
+
+const Header = (props: HeaderProps) => {
+    const isAuth = useSelector((state: RootStateOrAny) => state.auth.isAuthenticated);
+
     return (
         <header className={classes["header-style"]}>
             <Link to="/" className={classes.link}>
@@ -13,6 +22,7 @@ const Header = () => {
                     <h1>putLearn</h1>
                 </div>
             </Link>
+            {isAuth && props.children}
             <Burger />
         </header>
     );

@@ -7,6 +7,7 @@ export interface RequestConfiguration {
     body: {
         email: String | undefined,
         password: String | undefined
+        returnSecureToken : boolean
     }
 }
 
