@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 interface QuestionProps {
     onApproveClick: Function,
+    onCorrectAnswer: Function,
     question: {
         question: String,
         correct: String,
@@ -20,8 +21,12 @@ const Question = (props: QuestionProps) => {
 
     const onSubmitFormHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setChecked("");
+
+        if(checked ===props.question.correct){
+            props.onCorrectAnswer();
+        }
         props.onApproveClick();
+        setChecked("");
       };
 
     return (
