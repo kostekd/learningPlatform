@@ -8,7 +8,9 @@ interface QuestionProps{
 
 const Questions = (props : QuestionProps) => {
     const [index, setIndex] = useState(0);
-
+    const [finished, setFinished] = useState(false);
+    const [points, setPoints] = useState(0);
+    
     const onIndexIncreaseHandler = () => {
         setIndex(index + 1);
     }
