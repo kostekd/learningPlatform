@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    align-items: center;
+    background-color: #6fa499;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.radio {
+    padding: 1rem;
+    margin: 1rem;
+    max-width: fit-content;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.radio:hover{
+    background-color: antiquewhite;
+}
+
+.question{
+    padding: 1rem;
+    margin: 1rem;
+    width: 80%;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.submit-answer{
+    border: none;
+    width: 40%;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color:aliceblue;
+}
+
+.submit-answer:hover{
+    background-color: antiquewhite;
+}
+
