@@ -11,7 +11,7 @@ import classes from './../SignInPage/SignInPage.module.css';
 const LogInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
-  const { isLoading, error, sendRequest } = useHttpLogin();
+  const { isLoading, sendRequest } = useHttpLogin();
   const dispatchAction = useDispatch();
   const history = useHistory();
 
@@ -37,7 +37,7 @@ const LogInPage = () => {
     //getting response data
     data.then(result => {
       if (result === undefined) {
-        alert(error);
+        alert("Zły login lub hasło");
       }
       else {
         if(emailInputRef.current){
@@ -48,18 +48,18 @@ const LogInPage = () => {
     });
   }
 
-  const onLoadingElement = isLoading ? <p>Loading...</p> :  <button type="submit">Sign In</button>;
+  const onLoadingElement = isLoading ? <label className={classes.label}>Loading...</label> : <button className={classes.button} type="submit">Sign In</button>;
 
   return (
     <div>
       <Header />
       <div className={classes.content}>
-        <form onSubmit={onSubmitHandler}>
-          <h2>Log in to your account</h2>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" ref={emailInputRef} />
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" ref={passwordInputRef} />
+        <form className={classes.form} onSubmit={onSubmitHandler}>
+          <h2>Welcome back!</h2>
+          <label className={classes.label} htmlFor="email">Email</label>
+          <input className={classes.input} type="email" name="email" ref={emailInputRef} />
+          <label className={classes.label} htmlFor="password">Password</label>
+          <input className={classes.input} type="password" name="password" ref={passwordInputRef} />
           {onLoadingElement}
         </form>
       </div>

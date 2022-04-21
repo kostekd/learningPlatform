@@ -38,10 +38,6 @@ const BurgerModalContent = (props: BurgerModalProps) => {
           <Link to={APP_PAGE.ADD} className={classes.link}>Add flashcards</Link>
         </button>
 
-        <button>
-          <Link to='/about_us' className={classes.link}>About us</Link>
-        </button>
-        
         {!isAuth &&
           <button>
             <Link to={APP_PAGE.SIGN_IN} className={classes.link}>Sign Up</Link>
