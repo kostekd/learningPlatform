@@ -11,7 +11,7 @@ import classes from './../SignInPage/SignInPage.module.css';
 const LogInPage = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
-  const { isLoading, error, sendRequest } = useHttpLogin();
+  const { isLoading, sendRequest } = useHttpLogin();
   const dispatchAction = useDispatch();
   const history = useHistory();
 
