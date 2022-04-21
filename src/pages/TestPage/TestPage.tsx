@@ -10,7 +10,6 @@ const url = "https://mywebsite-5ab91-default-rtdb.europe-west1.firebasedatabase.
 
 const TestPage = () => {
     const [start, setStart] = useState(false);
-    const [loading, setLoading] = useState(false);
     const [flashcards, setFlashcards] = useState<FlashCardStructure[]>([]);
 
     const onStartHandler = () => {
@@ -36,9 +35,7 @@ const TestPage = () => {
     }
 
     useEffect(() => {
-        setLoading(true);
         addFlashCardHandler();
-        setLoading(false);
     }, [start]);
     return (
         <Fragment>
