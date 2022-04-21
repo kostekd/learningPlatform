@@ -36,29 +36,29 @@ const SignInPage = () => {
     //getting response data
     data.then(result => {
       if (result === undefined) {
-        alert(error);
+        alert("Konto o podanym emailu już istnieje");
       }
       else {
-        if(emailInputRef.current){
-          dispatchAction(authActions.login({ email: emailInputRef.current.value, token : result.idToken }));
+        if (emailInputRef.current) {
+          dispatchAction(authActions.login({ email: emailInputRef.current.value, token: result.idToken }));
         }
         history.push('/');
       }
     });
   }
 
-  const onLoadingElement = isLoading ? <p>Loading...</p> :  <button type="submit">Sign In</button>;
+  const onLoadingElement = isLoading ? <label className={classes.label}>Loading...</label> : <button className={classes.button} type="submit">Sign In</button>;
 
   return (
     <div>
       <Header />
       <div className={classes.content}>
-        <form onSubmit={onSubmitHandler}>
+        <form className={classes.form} onSubmit={onSubmitHandler}>
           <h2>Join our community</h2>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" ref={emailInputRef} />
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" ref={passwordInputRef} />
+          <label className={classes.label} htmlFor="email">Email</label>
+          <input className={classes.input} type="email" name="email" ref={emailInputRef} />
+          <label className={classes.label} htmlFor="password">Password</label>
+          <input className={classes.input} type="password" name="password" ref={passwordInputRef} />
           {onLoadingElement}
         </form>
       </div>

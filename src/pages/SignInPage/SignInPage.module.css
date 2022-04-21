@@ -1,6 +1,42 @@
-.content form{
+.content{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.button{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 6rem;
+    font-weight: bold;
+    font-size: large;
+    background-color: #1abc9c;;
+    border-radius: 10px;
+    border: 0px solid #7c7b7b;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #159078;;
+}
+
+.input{
+    width: 30vw;
+    min-width: 7rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: 1px solid #7c7b7b;
+    font-size: large;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.label{
+    font-weight: bold;
+    font-size: x-large;
 }
