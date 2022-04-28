@@ -36,6 +36,7 @@ const Questions = (props: QuestionProps) => {
     }
 
     const questionIndexes = Array.from({ length: 10 }, () => Math.floor(Math.random() * props.flashcards.length));
+    
     const questions = questionIndexes.map(element => {
         const alternativeIndex1 = Math.floor(Math.random() * props.flashcards.length);
         const alternativeIndex2 = Math.floor(Math.random() * props.flashcards.length);
